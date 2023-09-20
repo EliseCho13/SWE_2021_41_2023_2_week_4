@@ -15,5 +15,5 @@ for file in "$ready_dir"/*; do
   mkdir -p "$dest_dir"
 
   mv "$file" "$dest_dir/"
-  echo "'$file' to '$dest_dir done /'."
+  # echo "'$file' to '$dest_dir done /'."
 done
