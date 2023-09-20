@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ready_dir="files"
+main_dir="."
+
+
+if [ ! -d "$ready_dir" ]; then
+  echo "check zip again"
+  exit 1
+fi
+
+for file in "$ready_dir"/*; do
+  first=$(basename "$file" | cut -c1) #첫글자
+  dest_dir="$main_dir/$first" #옮길 디렉토리
+  mkdir -p "$dest_dir"
+  mv "$file" "$dest_dir/"
+  # echo "'$file' to '$dest_dir done /'."
+done
